@@ -19,3 +19,23 @@ console.log('ml5 version: ', ml5.version);
 
 /* Put "/model.json" After Teachable Machine link.*/
 classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/wu1DU2WtB/model.json",modelLoaded);
+
+function modelLoaded() {
+    console.log("Model has loaded!")
+}
+
+function check() {
+    img = document.getElementbyId("captured_image");
+    classifier.classify(img, gotResult);
+}
+
+function gotResult() {
+if (error) {
+console.error(error);
+    }else{
+    console.log(results);
+        document.getElementById("result_object_name").innerHTML = results[0].label;
+        document.getElementById("result_object_accuracy").innerHTML = results[0].confidence.toFixed(3);
+    
+    }
+}
