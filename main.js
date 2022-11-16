@@ -18,4 +18,4 @@ console.log('ml5 version: ', ml5.version);
 
 
 /* Put "/model.json" After Teachable Machine link.*/
-classifier = ml5.imageClassifier("",modelLoaded);
+classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/wu1DU2WtB/model.json",modelLoaded);
